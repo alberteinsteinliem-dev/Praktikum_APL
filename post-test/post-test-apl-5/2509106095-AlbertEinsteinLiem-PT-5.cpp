@@ -14,14 +14,10 @@ int jumlahPesertaEvent[100]={0}, jumlahEventUser[100]={0};
 int totalUser=0, totalEvent=0, UserLogin;
 string roleLogin;
 
-// ================= TAMPIL =================
 void tampil(string teks){
     cout<<teks<<endl;
 }
 
-// ================= SORTING =================
-
-// INSERTION SORT (ASCENDING - NAMA)
 void sortNamaEventAsc(Event data[], int totalEvent){
     for(int i=1; i<totalEvent; i++){
         Event key = data[i];
@@ -35,7 +31,6 @@ void sortNamaEventAsc(Event data[], int totalEvent){
     }
 }
 
-// SELECTION SORT (DESCENDING - JUMLAH PESERTA)
 void sortPesertaDesc(Event data[], int totalEvent, int jumlahPeserta[]){
     for(int i=0; i<totalEvent-1; i++){
         int maxIdx = i;
@@ -62,7 +57,6 @@ void sortTanggalAsc(Event data[], int totalEvent){
     }
 }
 
-// ================= TAMPIL PESERTA =================
 void tampilPesertaPerEvent(int indexEvent){
     cout<<"Peserta : ";
     if(jumlahPesertaEvent[indexEvent]==0){
@@ -76,7 +70,6 @@ void tampilPesertaPerEvent(int indexEvent){
     cout<<endl;
 }
 
-// ================= TAMPIL EVENT =================
 void tampilEvent(Event *data,int totalEvent,int Tampil){
     if(Tampil==totalEvent) return;
 
@@ -111,7 +104,6 @@ void lihatEvent(Event *data,int totalEvent){
     cout<<string(70,'=')<<endl;
 }
 
-// ================= LOGIN =================
 bool login(User *dataUser,int totalUser,string &roleLogin,int &indexLogin){
 
     string inputNama,inputNIM;
@@ -131,7 +123,6 @@ bool login(User *dataUser,int totalUser,string &roleLogin,int &indexLogin){
     return false;
 }
 
-// ================= REGISTER =================
 void registerUser(User *dataUser,int *totalUser){
 
     cout<<"\nREGISTER\n";
@@ -144,7 +135,6 @@ void registerUser(User *dataUser,int *totalUser){
     cout<<"Register berhasil\n";
 }
 
-// ================= EVENT =================
 void tambahEvent(Event *data,int *totalEvent){
 
     cin.ignore();
@@ -204,7 +194,6 @@ void hapusEvent(Event *data,int *totalEvent){
     cout<<"Event berhasil dihapus\n";
 }
 
-// ================= DAFTAR EVENT =================
 void daftarEventUserFunc(Event *data,int totalEvent,
                         User *dataUser,int UserLogin,
                         string dataPeserta[][100],int *jumlahPeserta,
@@ -227,7 +216,6 @@ void daftarEventUserFunc(Event *data,int totalEvent,
     cout<<"Berhasil daftar event\n";
 }
 
-// ================= EVENT DIIKUTI =================
 void eventDiikuti(int User,string dataEventUser[][100],int jumlahEventUser[]){
     cout<<"\nEVENT YANG KAMU IKUTI\n";
 
@@ -238,7 +226,6 @@ void eventDiikuti(int User,string dataEventUser[][100],int jumlahEventUser[]){
             tampil(dataEventUser[User][i]);
 }
 
-// ================= MENU ADMIN =================
 void menuAdmin(){
 
     int pilihanMenu;
@@ -283,7 +270,6 @@ void menuAdmin(){
     }while(pilihanMenu!=8);
 }
 
-// ================= MENU USER =================
 void menuUser(){
 
     int pilihanMenu;
@@ -312,7 +298,6 @@ void menuUser(){
     }while(pilihanMenu!=4);
 }
 
-// ================= MAIN =================
 int main(){
 
     daftarUser[totalUser++]={"Albert","95","admin"};
